@@ -1,8 +1,5 @@
-# virtualbutton
-echo "# virtualbutton" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/khansasafira19/virtualbutton.git
-git push -u origin main
+# Virtual Button 
+
+Untuk pencanangan Zona Integritas BPS Provinsi Bengkulu pada 31 maret 2021.
+
+Clone to your local: git clone https://github.com/khansasafira19/khansasafira19.github.io.git
