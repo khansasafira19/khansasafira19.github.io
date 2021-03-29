@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+   <meta charset="utf-8">
+   <title>My Page Title</title>
+   <meta name="description" content="My Page Description">
+   <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+   <script src="script.js"></script>
+   <audio id="nyan" src="https://designshack.net/tutorialexamples/html5-audio-player/media/evidence-song.mp3"
+      preload="metadata" type="audio/mpeg">
+      Your browser does not support the audio element.
+   </audio>
+   <a class="btn" id="nyan-btn">play / pause</a>
+   <button onclick="playAudio()" type="button">Play Audio</button>
+   <button onclick="pauseAudio()" type="button">Pause Audio</button>
+   <script type="text/javascript">
+      var el = document.getElementById("audioNotifikasi");
+      function playAudio() {
+         el.Play();
+      }
+      function pauseAudio() {
+         el.Pause();
+      }
+   </script>
+</body>
+
+</html>
