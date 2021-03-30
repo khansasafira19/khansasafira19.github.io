@@ -5,6 +5,7 @@
     /* background-image: linear-gradient(to right, #0093DD 0%, #68B92E 51%, #ED891A 100%)!important; */
 }
 
+
 /* .button {
     transition: all 0.3s ease!important; 
     background-color: #FFC145!important;
@@ -47,8 +48,17 @@
 }
 
 span {
-    font-size: 8rem;
+    font-size: 4rem;
+    line-height: 4rem;
     transition: all .3s ease-in-out;
+}
+
+.zona {
+    padding-top: 150px;
+}
+
+.pops {
+    font-size: 30px!important;
 }
 
 .button:hover {
@@ -66,17 +76,36 @@ span {
 
 #modal-container .modal-background .modal {
     /* background: white; */
-    padding: 100px!important;
+    padding: 70px!important;
     /* display: inline-block; */
     /* border-radius: 3px; */
     /* font-weight: 300; */
     /* position: relative; */
 }
 
-html, body {
+html,
+body {
     font-family: Montserrat, sans-serif!important;
 }
 
 .flex-rows {
     text-align: center!important;
+}
+
+#modal-container .modal-background .modal h2 {
+    /* font-size: 25px;
+  line-height: 25px;
+  margin-bottom: 15px; */
+    font-size: 100px!important;
+    line-height: 120px!important;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+#modal-container .modal-background .modal p {
+    /* font-size: 18px;
+  line-height: 22px; */
+    font-size: 50px!important;
+    font-weight: bold;
+    line-height: 60px!important;
 }
