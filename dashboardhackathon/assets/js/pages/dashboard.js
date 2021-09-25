@@ -23,9 +23,9 @@ var optionsProfileVisit = {
     },
 }
 let optionsVisitorsProfile = {
-    series: [30, 70],
-    labels: ['Significant', 'Insignificant'],
-    colors: ['#435ebe', '#55c6e8'],
+    series: [70, 30],
+    labels: ['Insignificant', 'Significant'],
+    colors: ['#6c757d', '#28a745'],
     chart: {
         type: 'donut',
         width: '100%',
