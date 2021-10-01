@@ -15,7 +15,7 @@ var optionsProfileVisit = {
     plotOptions: {},
     series: [{
         name: 'RMSE',
-        data: [2.4039, 2.4039, 3.7567, 0.9619, 4.4378, 8.2413, 2.3409, 4.2583]
+        data: [2.4039, 2.4039, 3.7567, 0.9287, 4.4378, 8.2413, 2.3409, 4.2583]
     }],
     colors: '#435ebe',
     xaxis: {
