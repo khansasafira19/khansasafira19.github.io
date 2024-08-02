@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', { packages: ['corechart'] });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Category', 'Value1', 'Value2'],
+                ['Category 1', 40, 60],
+                ['Category 2', 50, 50],
+                ['Category 3', 60, 40]
+            ]);
+
+            var options = {
+                title: 'Butterfly Chart',
+                hAxis: { title: 'Values', minValue: 0 },
+                vAxis: { title: 'Categories' },
+                seriesType: 'bars',
+                series: {
+                    0: { targetAxisIndex: 0 },
+                    1: { targetAxisIndex: 1 }
+                },
+                colors: ['steelblue', 'darkred']
+            };
+
+            var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
+            chart.draw(data, options);
+        }
+    </script>
+</head>
+
+<body>
+    <div id="chart_div" style="width: 800px; height: 500px;"></div>
+</body>
+
+</html>
