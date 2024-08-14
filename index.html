@@ -3,286 +3,965 @@
 
 <head>
 	<meta charset="utf-8">
-	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="author" content="Nofriani">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<title>Safira Khansa's Unlocked</title>
 	<meta name="description"
 		content="Laman ini memuat karya Nofriani (nama pena: Safira Khansa), dari website, paper, buku, dsb.">
 	<meta name="keywords" content="Coding, Website, Sharing, Pranata Komputer">
-	<meta name="theme-color" content="#1572e8">
-	<link rel="shortcut icon" href="indexassets/favicon-fi.png" type="image/x-icon">
+	<meta name="author" content="Nofriani">
+
 	<meta property="og:site_name" content="Karya Safira Khansa">
 	<meta property="og:description"
 		content="Laman ini memuat karya Nofriani (nama pena: Safira Khansa), dari website, paper, buku, dsb.">
 	<meta property="og:title" content="Karya Safira Khansa">
 	<meta property="og:url" content="https://khansasafira19.github.io/">
-	<title>Safira Khansa's Unlocked</title>
 
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
-	<link rel="stylesheet"
-		href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/css/bootstrap-select.min.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
-	<link rel="stylesheet"
-		href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
-	<link rel="stylesheet" href="community-redesign/assets/css/main.css?v=0.3">
+	<!-- Favicons -->
+	<link rel="shortcut icon" href="index-asset/assets/img/favicon-fi.png" type="image/x-icon">
 
-	<style>
-		.card-body>a {
-			position: relative;
-			display: block;
-		}
+	<!-- Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Noto+Sans+Symbols:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+		rel="stylesheet">
 
-		.card-body>a::before {
-			pointer-events: none;
-			content: "";
-			display: block;
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			background: rgba(0, 0, 0, 0);
-			transition: all .4s ease;
-		}
+	<!-- Vendor CSS Files -->
+	<link href="index-asset/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="index-asset/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+	<link href="index-asset/assets/vendor/aos/aos.css" rel="stylesheet">
+	<link href="index-asset/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+	<link href="index-asset/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+	<link href="index-asset/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-		.card-body>a:hover::before {
-			background: rgba(0, 0, 0, .62);
-			border-radius: 25%;
-		}
-
-		.paper>a:hover::before {
-			background: rgba(255, 255, 255, .3);
-			border-radius: 25%;
-		}
-
-		.card-body>a::after {
-			pointer-events: none;
-			content: "→ \00a0 LIHAT";
-			display: block;
-			position: absolute;
-			font-size: 18px;
-			left: 0;
-			width: 100%;
-			color: #fff;
-			transform: translateY(-50%);
-			transition: all .4s ease;
-			top: 100%;
-			opacity: 0;
-		}
-
-		.card-body>a:hover::after {
-			top: 50%;
-			opacity: 1;
-		}
-
-		.animated {
-			-webkit-animation-duration: 2s;
-			animation-duration: 2s;
-		}
-
-		body {
-			font-family: 'Montserrat' !important;
-			font-size: 20px;
-		}
-
-		.card {
-			border-width: 0px;
-			border-radius: 25%;
-		}
-
-		.card-header {
-			border-top-left-radius: 60% !important;
-			border-top-right-radius: 60% !important;
-			background-color: transparent;
-			border-width: 0px;
-		}
-
-		body {
-			text-shadow: 0 1px 1px rgb(0 0 0 / 20%), 0 1px 3px rgb(0 0 0 / 5%), 0 3px 5px rgb(0 0 0 / 5%) !important;
-			color: rgb(3, 18, 26) !important;
-			background-color: #1C1D1D;
-		}
-
-		img {
-			border-radius: 25%
-		}
-
-		h1,
-		p {
-			color: #fff;
-		}
-
-		a {
-			color: #71e3f7;
-			transition: 0.4s;
-		}
-
-		a:hover {
-			color: #71e3f7;
-			font-size: 110%;
-		}
-	</style>
-
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+	<!-- Main CSS File -->
+	<link href="index-asset/assets/css/main.css" rel="stylesheet">
 </head>
 
-<body>
-	<div class="container py-5 text-center">
-		<h1>Sharing Source Code Web Apps</span></h1>
-		<br/>
-		<p>Lihat <a href="https://github.com/khansasafira19/">Github Profile</a> saya untuk source code lengkap
-			Aplikasi-aplikasi buatan saya.</p>
-		<p>Lihat <a href="https://github.com/khansasafira19/">YouTube Channel</a> dan <a href="https://www.instagram.com/khansa.safira19/">Instagram</a> saya untuk belajar bahasa Inggris. </p>
-		<ul class="row mt-5 justify-content-center list-unstyled mb-0">
-			<li class="col-sm-6 col-lg-3">
-				<div class="card animated zoomIn">
-					<div class="card-header">
-						<div class="card-title">INFOGRAFIS INTERAKTIF</div>
-					</div>
-					<div class="card-body p-1">
-						<a href="https://khansasafira19.github.io/infografisfi/"><img src="indexassets/infografisfi.png"
-								alt="Infografis Interaktif" class="w-100"></a>
-					</div>
-				</div>
-			</li>
-			<li class="col-sm-6 col-lg-6">
-				<div class="card animated zoomIn">
-					<a href="#" title="DEMO APLIKASI"><i class="fas fa-certificate position-absolute text-danger"
-							style="top: -12px; right: -12px; font-size: 48px;"></i></a>
-					<!-- <div class="position-absolute text-white fz-11 fw-600" style="top: 3px; right: -3px; transform: rotate(15deg);">BARU</div> -->
-					<div class="card-header">
-						<div class="card-title">PORTAL PINTAR 2.0</div>
-					</div>
-					<div class="card-body p-1">
-						<a href="https://webapps.bps.go.id/bengkulu/portalpintar/"><img src="indexassets/portal.png"
-								alt="Portal Pusat Informasi Terkini Dalam Layar" class="w-100"></a>
-					</div>
-				</div>
-			</li>
-			<li class="col-sm-6 col-lg-3">
-				<div class="card animated zoomIn">
-					<a href="#" title="DEMO APLIKASI"><i class="fas fa-certificate position-absolute text-danger"
-							style="top: -12px; right: -12px; font-size: 48px;"></i></a>
-					<div class="card-header">
-						<div class="card-title">SIPENA 4.0</div>
-					</div>
-					<div class="card-body p-1">
-						<a href="https://webapps.bps.go.id/bengkulu/sipena/"><img src="indexassets/sipena.png"
-								alt="Sistem Perekaman Fenomena" class="w-100"></a>
-					</div>
-				</div>
-			</li>
-		</ul>
-		<br />
-		<h1>Buku Karya Safira Khansa (Nofriani, S.ST.)</span></h1>
-		<ul class="row mt-5 justify-content-center list-unstyled mb-0">
-			<li class="col-sm-6 col-lg-6">
-				<div class="card animated zoomIn">
-					<div class="card-header">
-						<div class="card-title">GERIMIS HUJAN DI HATI HAFU</div>
-					</div>
-					<div class="card-body p-1">
-						<a href="https://play.google.com/store/books/details?id=BlKeEAAAQBAJ"><img
-								src="indexassets/hafu.jpg" alt="Gerimis Hujan di Hati Hafu" class="w-100"></a>
+<body class="index-page">
+
+	<header id="header" class="header d-flex align-items-center fixed-top">
+		<div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+			<a href="index.html" class="logo d-flex align-items-center">
+				<!-- Uncomment the line below if you also wish to use an image logo -->
+				<!-- <img src="index-asset/assets/img/logo.png" alt=""> -->
+				<h1 class="sitename">Fii - Safira K</h1>
+			</a>
+
+			<nav id="navmenu" class="navmenu">
+				<ul>
+					<li><a href="#hero" class="active">Home</a></li>
+					<li><a href="#about">Source Code</a></li>
+					<li><a href="#services">Research</a></li>
+					<li><a href="#portfolio">Books</a></li>
+					<li><a href="#faq">Experience</a></li>
+					<li><a href="#recent-posts">Achievements</a></li>
+					<li><a href="#footer">Contact</a></li>
+				</ul>
+				<i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+			</nav>
+
+		</div>
+	</header>
+
+	<main class="main">
+
+		<!-- Hero Section -->
+		<section id="hero" class="hero section dark-background">
+
+			<div id="hero-carousel" data-bs-interval="5000" class="container carousel carousel-fade"
+				data-bs-ride="carousel">
+
+				<!-- Slide 1 -->
+				<div class="carousel-item active">
+					<div class="carousel-container">
+						<h2 class="animate__animated animate__fadeInDown">Safira Khansa's Unlocked</h2>
+						<p class="animate__animated animate__fadeInUp">My Autobiography and Sharing Portal.</p>
+						<a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read
+							More</a>
 					</div>
 				</div>
-			</li>
-			<li class="col-sm-6 col-lg-6">
-				<div class="card animated zoomIn">
-					<div class="card-header">
-						<div class="card-title">KU MELANGKAH DENGAN BISMILLAH</div>
-					</div>
-					<div class="card-body p-1">
-						<a href="https://play.google.com/store/books/details?id=OdaTBAAAQBAJ"><img
-								src="indexassets/kmdb.jpg" alt="Ku Melangkah dengan Bismillah" class="w-100"></a>
-					</div>
-				</div>
-			</li>
-		</ul>
-		<ul class="row mt-5 justify-content-center list-unstyled mb-0">
-			<li class="col-sm-6 col-lg-6">
-				<div class="card animated zoomIn">
-					<div class="card-header">
-						<div class="card-title">EASILY UNDERSTANDING ENGLISH <br /> 7<sup>TH</sup> EDITION</div>
-					</div>
-					<div class="card-body p-1">
-						<a href="https://drive.google.com/drive/folders/10DZsqUkf4jFF7N8kFDGATDjFwWLU8Spn"><img
-								src="indexassets/eue.jpg" alt="Easily Understanding English, Seventh Editiong"
-								class="w-100"></a>
+
+				<!-- Slide 2 -->
+				<div class="carousel-item">
+					<div class="carousel-container">
+						<h2 class="animate__animated animate__fadeInDown">Free Source Code</h2>
+						<p class="animate__animated animate__fadeInUp">You guys can download and reuse every source code
+							package I've enlisted below.</p>
+						<a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read
+							More</a>
 					</div>
 				</div>
-			</li>
-			<li class="col-sm-6 col-lg-6">
-				<div class="card animated zoomIn">
-					<div class="card-header">
-						<div class="card-title">PEMBANGUNAN WEBSITE <br />DENGAN YII2 FRAMEWORK</div>
-					</div>
-					<div class="card-body p-1">
-						<a href="https://play.google.com/store/books/details?id=bqOqDwAAQBAJ"><img
-								src="indexassets/yii2.png" alt="Pembangunan Website dengan Yii2 Framework"
-								class="w-100"></a>
+
+				<!-- Slide 3 -->
+				<div class="carousel-item">
+					<div class="carousel-container">
+						<h2 class="animate__animated animate__fadeInDown">Research Papers and Books</h2>
+						<p class="animate__animated animate__fadeInUp">I've written some books and research papers, it
+							would be great if you use my work for reference and citation.</p>
+						<a href="#services" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read
+							More</a>
 					</div>
 				</div>
-			</li>
-		</ul>
-		<br />
-		<h1>Research Paper Written by Nofriani, S.ST.</span></h1>
-		<ul class="row mt-5">
-			<li class="col-sm-6 col-lg-6">
-				<div class="animated zoomIn">
-					<div class="card-body p-1 paper">
-						<a href="https://jurnal.kominfo.go.id/index.php/pekommas/article/view/2070104">
-							<p>Harnessing Technology Acceptance Model (TAM) on Information System to Safeguard
-								Accelerated Data Collecting and Processing Amid COVID-19 Pandemic (2022)</p>
+
+				<a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
+					<span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+				</a>
+
+				<a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
+					<span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+				</a>
+			</div>
+
+			<svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+				viewBox="0 24 150 28 " preserveAspectRatio="none">
+				<defs>
+					<path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z">
+					</path>
+				</defs>
+				<g class="wave1">
+					<use xlink:href="#wave-path" x="50" y="3"></use>
+				</g>
+				<g class="wave2">
+					<use xlink:href="#wave-path" x="50" y="0"></use>
+				</g>
+				<g class="wave3">
+					<use xlink:href="#wave-path" x="50" y="9"></use>
+				</g>
+			</svg>
+		</section><!-- /Hero Section -->
+
+		<!-- About Section -->
+		<section id="about" class="about section">
+			<!-- Section Title -->
+			<div class="container section-title" data-aos="fade-up">
+				<h2>Sharing</h2>
+				<p>Source Code - FREE</p>
+			</div><!-- End Section Title -->
+
+			<div class="container">
+				<div class="row gy-4">
+					<p>
+						Teman-teman dapat lihat <a href="https://github.com/khansasafira19/">Github Profile</a> saya
+						untuk source code lengkap
+						Aplikasi-aplikasi buatan saya. Berikut list code yang bisa dinikmati per Agustus 2024:
+					</p>
+					<div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100">
+						<ul>
+							<li><i class="bi bi-check2-circle"></i> <span>Phenomena Recording System</span></li>
+							<li><i class="bi bi-check2-circle"></i> <span>Employees' Jobs Management System</span></li>
+							<li><i class="bi bi-check2-circle"></i> <span>Online Course Complete With Online Tests (CAT
+									Simulation)</span></li>
+						</ul>
+					</div>
+
+					<div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+						<ul>
+							<li><i class="bi bi-check2-circle"></i> <span>Data Storytelling with HTML5</span></li>
+							<li><i class="bi bi-check2-circle"></i> <span>Virtual Play Button that plays audio and
+									confetti</span></li>
+							<li><i class="bi bi-check2-circle"></i> <span>Interactive Infographics with JQuery and
+									HTML</span></li>
+						</ul>
+					</div>
+				</div>
+				<a href="#features" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+			</div>
+
+		</section><!-- /About Section -->
+
+		<!-- Features Section -->
+		<section id="features" class="features section">
+
+			<div class="container">
+
+				<ul class="nav nav-tabs row  d-flex" data-aos="fade-up" data-aos-delay="100">
+					<li class="nav-item col-4">
+						<a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#features-tab-1">
+							<i class="bi bi-newspaper"></i>
+							<h4 class="d-none d-lg-block">Phenomena Recording System</h4>
 						</a>
-					</div>
-				</div>
-			</li>
-			<li class="col-sm-6 col-lg-6">
-				<div class="animated zoomIn">
-					<div class="card-body p-1 paper">
-						<a href="https://ajstd.org/index.php/ajstd/article/view/680">
-							<p>Harnessing Multi-label Classification Approaches for Economic Phenomena Categorization
-								(2021)</p>
+					</li>
+					<li class="nav-item col-4">
+						<a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-2">
+							<i class="bi bi-person-badge-fill"></i>
+							<h4 class="d-none d-lg-block">Employees' Jobs Management System</h4>
 						</a>
-					</div>
-				</div>
-			</li>
-			<li class="col-sm-6 col-lg-6">
-				<div class="animated zoomIn">
-					<div class="card-body p-1 paper">
-						<a href="http://jitce.fti.unand.ac.id/index.php/JITCE/article/view/68">
-							<p>Machine Learning Application for Classification Prediction of Household's Welfare Status
-								(2020)</p>
+					</li>
+					<li class="nav-item col-4">
+						<a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-3">
+							<i class="bi bi-cloud-upload"></i>
+							<h4 class="d-none d-lg-block">Online Course Complete With Online Tests (CAT Simulation)</h4>
 						</a>
-					</div>
-				</div>
-			</li>
-			<li class="col-sm-6 col-lg-6">
-				<div class="animated zoomIn">
-					<div class="card-body p-1 paper">
-						<a href="https://jurnal.kominfo.go.id/index.php/pekommas/article/view/2040105">
-							<p>Comparisons of Supervised Machine Learning Techniques in Predicting the Classification of
-								the Household's Welfare Status (2019)</p>
+					</li>
+					<li class="nav-item col-4">
+						<a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-4">
+							<i class="bi bi-binoculars"></i>
+							<h4 class="d-none d-lg-block">Data Storytelling with HTML5</h4>
 						</a>
-					</div>
-				</div>
-			</li>
-			<li class="col-sm-6 col-lg-6">
-				<div class="animated zoomIn">
-					<div class="card-body p-1 paper">
-						<a href="https://jurnal.kominfo.go.id/index.php/iptekkom/article/view/93-106">
-							<p>Analysis On Internet Pattern of Youtube Browsing in Indonesia Using Web Crawling and
-								Unsupervised Learning (2018)</p>
+					</li>
+					<li class="nav-item col-4">
+						<a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-5">
+							<i class="bi bi-speaker-fill"></i>
+							<h4 class="d-none d-lg-block">Virtual Play Button that plays audio and confetti</h4>
 						</a>
+					</li>
+					<li class="nav-item col-4">
+						<a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-6">
+							<i class="bi bi-brightness-high"></i>
+							<h4 class="d-none d-lg-block">Interactive Infographics with JQuery and HTML</h4>
+						</a>
+					</li>
+				</ul><!-- End Tab Nav -->
+
+				<div class="tab-content" data-aos="fade-up" data-aos-delay="200">
+
+					<div class="tab-pane fade active show" id="features-tab-1">
+						<div class="row">
+							<div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+								<h3>Phenomena Recording System</h3>
+								<p>
+									Aplikasi perekaman data fenomena (ekonomi). Fiturnya berupa kategorisasi (manual)
+									fenomena dalam PDRB lapus dan pengeluaran, alat bantu Gooogle CSE, manajemen
+									pengguna, tabulasi fenomena, monitoring fenomena. Aplikasi ini adalah objek paper
+									penelitian saya (terlampir di GitHub-nya), dipakai di tempat kerja saya (versi
+									unmodified-nya) dan sedang dikembangkan versi upgrade nya.
+								</p>
+								<ul>
+									<li><i class="bi bi-check2-all"></i>
+										<span>Basis: Yii2 PHP Framework, MySQL Database, AdminLTE3</span>
+									</li>
+								</ul>
+								<p>
+									Link: <a
+										href="https://github.com/khansasafira19/sk-phenomena-recording-portal">https://github.com/khansasafira19/sk-phenomena-recording-portal</a></span>.
+
+								</p>
+							</div>
+							<div class="col-lg-6 order-1 order-lg-2 text-center">
+								<img src="index-asset/assets/img/sharing-app/phenomena.png" alt="" class="img-fluid">
+							</div>
+						</div>
+					</div><!-- End Tab Content Item -->
+
+					<div class="tab-pane fade" id="features-tab-2">
+						<div class="row">
+							<div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+								<h3>
+									Employees' Jobs Management System</h3>
+								<p>
+									Aplikasi manajemen penugasan kerja pegawai di kantor. Berisi manajemen laporan
+									pekerjaan harian, presensi harian, manajemen penugasan, manajemen tim kerja,
+									manajemen pengguna dan executive summary.
+								</p>
+								<ul>
+									<li><i class="bi bi-check2-all"></i>
+										<span>Basis: Yii2 PHP Framework, MySQL Database, AdminLTE3</span>
+									</li>
+								</ul>
+								<p>
+									Link: <a
+										href="https://github.com/khansasafira19/sk-employee-job-manager">https://github.com/khansasafira19/sk-employee-job-manager</a></span>.
+
+								</p>
+							</div>
+							<div class="col-lg-6 order-1 order-lg-2 text-center">
+								<img src="index-asset/assets/img/sharing-app/employee.png" alt="" class="img-fluid">
+							</div>
+						</div>
+					</div><!-- End Tab Content Item -->
+
+					<div class="tab-pane fade" id="features-tab-3">
+						<div class="row">
+							<div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+								<h3>Eduprime Course</h3>
+								<p>
+									Aplikasi untuk Lembaga Les/Sekolah. Isinya manajemen materi PDF dan YouTube Videos,
+									manajemen siswa/admin, CAT Simulation (latihan soal dengan timer dan pembahasan),
+									manajemen soal (dapat tambah paket soal, soal bergambar dsb).
+								</p>
+								<ul>
+									<li><i class="bi bi-check2-all"></i>
+										<span>Basis: Yii2 PHP Framework, MySQL, Bootstrapmade (NiceAdmin dan
+											Bootslander)</span>
+									</li>
+								</ul>
+								<p>
+									Link: <a
+										href="https://github.com/khansasafira19/sk-eduprime-course">https://github.com/khansasafira19/sk-eduprime-course</a></span>.
+
+								</p>
+							</div>
+							<div class="col-lg-6 order-1 order-lg-2 text-center">
+								<img src="index-asset/assets/img/sharing-app/eduprime.png" alt="" class="img-fluid">
+							</div>
+						</div>
+					</div><!-- End Tab Content Item -->
+
+					<div class="tab-pane fade" id="features-tab-4">
+						<div class="row">
+							<div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+								<h3>Laman Data Storytelling</h3>
+								<p>
+									Laman berisi storytelling berdasarkan data nelayan dan kemiskinan di Provinsi
+									Bengkulu. Laman ini pernah diikutkan lomba data storytelling namun belum beruntung
+									mendapatkan predikat juara.
+								</p>
+								<ul>
+									<li><i class="bi bi-check2-all"></i>
+										<span>Basis: HTML, JavaScript, Data AOS</span>
+									</li>
+								</ul>
+								<p>
+									Link: <a
+										href="https://github.com/khansasafira19/sk-cool-storytelling">https://github.com/khansasafira19/sk-cool-storytelling</a></span>.
+
+								</p>
+							</div>
+							<div class="col-lg-6 order-1 order-lg-2 text-center">
+								<img src="index-asset/assets/img/sharing-app/storytelling.png" alt="" class="img-fluid">
+							</div>
+						</div>
+					</div><!-- End Tab Content Item -->
+
+					<div class="tab-pane fade" id="features-tab-5">
+						<div class="row">
+							<div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+								<h3>Virtual Playbutton</h3>
+								<p>
+									Laman berisi virtual button yang jika diklik menampilkan confetti dan memutar audio.
+									Dapat digunakan untuk event yang membutuhkan kick-off mark.
+								</p>
+								<ul>
+									<li><i class="bi bi-check2-all"></i>
+										<span>Basis: HTML, JavaScript</span>
+									</li>
+								</ul>
+								<p>
+									Link: <a
+										href="https://github.com/khansasafira19/sk-virtual-playbutton">https://github.com/khansasafira19/sk-virtual-playbutton</a></span>.
+
+								</p>
+							</div>
+							<div class="col-lg-6 order-1 order-lg-2 text-center">
+								<img src="index-asset/assets/img/sharing-app/playbutton.png" alt="" class="img-fluid">
+							</div>
+						</div>
+					</div><!-- End Tab Content Item -->
+
+					<div class="tab-pane fade" id="features-tab-6">
+						<div class="row">
+							<div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+								<h3>Interactive Infographics</h3>
+								<p>
+									Laman berisi infografis interaktif berupa data kemiskinan, pengangguran dan penduduk
+									tahun 2015. Dibangun tahun 2016, alhamdulillah mendapatkan juara 3 kategori
+									Infografis Interaktif pada perlombaan desain infografis yang diselenggarakan oleh
+									BPS RI.
+								</p>
+								<ul>
+									<li><i class="bi bi-check2-all"></i>
+										<span>HTML, JavaScript dan template yang maaf saya lupa diambil dimana.</span>
+									</li>
+								</ul>
+								<p>
+									Link: <a
+										href="https://github.com/khansasafira19/sk-interactive-infographics">https://github.com/khansasafira19/sk-interactive-infographics</a></span>.
+
+								</p>
+							</div>
+							<div class="col-lg-6 order-1 order-lg-2 text-center">
+								<img src="index-asset/assets/img/sharing-app/infographics.png" alt="" class="img-fluid">
+							</div>
+						</div>
+					</div><!-- End Tab Content Item -->
+				</div>
+
+			</div>
+
+		</section><!-- /Features Section -->
+
+		<!-- Services Section -->
+		<section id="services" class="services section">
+
+			<!-- Section Title -->
+			<div class="container section-title" data-aos="fade-up">
+				<h2>RESEARCH</h2>
+				<p>MY PUBLISHED RESEARCH PAPERS ABOUT DATA AND INFORMATION TECHNOLOGY</p>
+			</div><!-- End Section Title -->
+
+			<div class="container">
+
+				<div class="row gy-4">
+
+					<div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="100">
+						<div class="service-item  position-relative">
+							<div class="icon">
+								<i class="bi bi-cash-stack" style="color: #0dcaf0;"></i>
+							</div>
+							<a href="https://jurnal.kominfo.go.id/index.php/pekommas/article/view/2070104"
+								class="stretched-link">
+								<h3>Harnessing Technology Acceptance Model (TAM) on Information System to Safeguard
+									Accelerated Data Collecting and Processing Amid COVID-19 Pandemic.</h3>
+							</a>
+							<p>2022</p>
+						</div>
+					</div><!-- End Service Item -->
+
+					<div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="200">
+						<div class="service-item position-relative">
+							<div class="icon">
+								<i class="bi bi-calendar4-week" style="color: #fd7e14;"></i>
+							</div>
+							<a href="https://ajstd.org/index.php/ajstd/article/view/680" class="stretched-link">
+								<h3>Harnessing Multi-label Classification Approaches for Economic Phenomena
+									Categorization.</h3>
+							</a>
+							<p>2021</p>
+						</div>
+					</div><!-- End Service Item -->
+
+					<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+						<div class="service-item position-relative">
+							<div class="icon">
+								<i class="bi bi-chat-text" style="color: #20c997;"></i>
+							</div>
+							<a href="http://jitce.fti.unand.ac.id/index.php/JITCE/article/view/68"
+								class="stretched-link">
+								<h3>Machine Learning Application for Classification Prediction of Household's Welfare
+									Status.</h3>
+							</a>
+							<p>2020</p>
+						</div>
+					</div><!-- End Service Item -->
+
+					<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+						<div class="service-item position-relative">
+							<div class="icon">
+								<i class="bi bi-credit-card-2-front" style="color: #df1529;"></i>
+							</div>
+							<a href="https://jurnal.kominfo.go.id/index.php/pekommas/article/view/2040105"
+								class="stretched-link">
+								<h3>Comparisons of Supervised Machine Learning Techniques in Predicting the
+									Classification of
+									the Household's Welfare Status.</h3>
+							</a>
+							<p>2019</p>
+						</div>
+					</div><!-- End Service Item -->
+
+					<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+						<div class="service-item position-relative">
+							<div class="icon">
+								<i class="bi bi-globe" style="color: #6610f2;"></i>
+							</div>
+							<a href="https://jurnal.kominfo.go.id/index.php/iptekkom/article/view/93-106"
+								class="stretched-link">
+								<h3>Analysis On Internet Pattern of Youtube Browsing in Indonesia Using Web Crawling and
+									Unsupervised Learning.</h3>
+							</a>
+							<p>2018</p>
+						</div>
+					</div><!-- End Service Item -->
+
+
+				</div>
+
+			</div>
+
+		</section><!-- /Services Section -->
+
+		<!-- Portfolio Section -->
+		<section id="portfolio" class="portfolio section">
+
+			<!-- Section Title -->
+			<div class="container section-title" data-aos="fade-up">
+				<h2>Writing</h2>
+				<p>My Books, under a pen name "Safira Khansa"</p>
+			</div><!-- End Section Title -->
+
+			<div class="container">
+
+				<div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+
+					<ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+						<li data-filter="*" class="filter-active">All</li>
+						<li data-filter=".filter-app">Ebook (Free)</li>
+						<li data-filter=".filter-product">Printed</li>
+					</ul><!-- End Portfolio Filters -->
+
+					<div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+
+						<div class="col-lg-3 col-md-6 portfolio-item isotope-item filter-app">
+							<img src="index-asset/assets/img/books/eue.jpg" class="img-fluid" alt="">
+							<div class="portfolio-info">
+								<h4>EASILY UNDERSTANDING ENGLISH <br /> 7<sup>TH</sup> EDITION</h4>
+								<p>2020</p>
+								<a href="index-asset/assets/img/books/eue.jpg"
+									title="EASILY UNDERSTANDING ENGLISH 7th EDITION"
+									data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i
+										class="bi bi-zoom-in"></i></a>
+								<a href="https://drive.google.com/drive/folders/10DZsqUkf4jFF7N8kFDGATDjFwWLU8Spn"
+									title="More Details" class="details-link" target="_blank"><i
+										class="bi bi-link-45deg"></i></a>
+							</div>
+						</div><!-- End Portfolio Item -->
+
+						<div class="col-lg-3 col-md-6 portfolio-item isotope-item filter-product">
+							<img src="index-asset/assets/img/books/hafu.jpg" class="img-fluid" alt="">
+							<div class="portfolio-info">
+								<h4>GERIMIS HUJAN DI HATI HAFU</h4>
+								<p>2022</p>
+								<a href="index-asset/assets/img/books/hafu.jpg" title="GERIMIS HUJAN DI HATI HAFU"
+									data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i
+										class="bi bi-zoom-in"></i></a>
+								<a href="https://play.google.com/store/books/details?id=BlKeEAAAQBAJ"
+									title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+							</div>
+						</div><!-- End Portfolio Item -->
+
+						<div class="col-lg-3 col-md-6 portfolio-item isotope-item filter-product">
+							<img src="index-asset/assets/img/books/yii2.png" class="img-fluid" alt="" width="100%">
+							<div class="portfolio-info">
+								<h4>PEMBANGUNAN WEBSITE <br />DENGAN YII2 FRAMEWORK</h4>
+								<p>2019</p>
+								<a href="index-asset/assets/img/books/yii2.png"
+									title="PEMBANGUNAN WEBSITE DENGAN YII2 FRAMEWORK"
+									data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i
+										class="bi bi-zoom-in"></i></a>
+								<a href="https://play.google.com/store/books/details?id=bqOqDwAAQBAJ"
+									title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+							</div>
+						</div><!-- End Portfolio Item -->
+
+						<div class="col-lg-3 col-md-6 portfolio-item isotope-item filter-product">
+							<img src="index-asset/assets/img/books/kmdb.jpg" class="img-fluid" alt="" width="100%">
+							<div class="portfolio-info">
+								<h4>KU MELANGKAH DENGAN BISMILLAH</h4>
+								<p>2014</p>
+								<a href="index-asset/assets/img/books/kmdb.jpg" title="KU MELANGKAH DENGAN BISMILLAH"
+									data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i
+										class="bi bi-zoom-in"></i></a>
+								<a href="https://play.google.com/store/books/details?id=OdaTBAAAQBAJ"
+									title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+							</div>
+						</div><!-- End Portfolio Item -->
+
+					</div><!-- End Portfolio Container -->
+
+				</div>
+
+			</div>
+
+		</section><!-- /Portfolio Section -->
+
+		<!-- Faq Section -->
+		<section id="faq" class="faq section">
+			<!-- Section Title -->
+			<div class="container section-title" data-aos="fade-up">
+				<h2>EXPERIENCE</h2>
+				<p>EDUCATION AND OCCUPATION</p>
+			</div><!-- End Section Title -->
+
+			<div class="container" data-aos="fade-up">
+				<div class="row">
+					<div class="col-12">
+						<div class="custom-accordion" id="accordion-faq">
+							<div class="accordion-item">
+								<h2 class="mb-0">
+									<button class="btn btn-link" type="button" data-bs-toggle="collapse"
+										data-bs-target="#collapse-faq-1">
+										Bachelor Degree: Computation Statistics
+									</button>
+								</h2>
+
+								<div id="collapse-faq-1" class="collapse show" aria-labelledby="headingOne"
+									data-parent="#accordion-faq">
+									<div class="accordion-body">
+										I graduated from Institute of Statistics (Politeknik Statistika STIS) in 2013,
+										majored in Computation Statistics.
+									</div>
+								</div>
+							</div>
+							<!-- .accordion-item -->
+
+							<div class="accordion-item">
+								<h2 class="mb-0">
+									<button class="btn btn-link" type="button" data-bs-toggle="collapse"
+										data-bs-target="#collapse-faq-2">
+										Master Degree: Working on it
+									</button>
+								</h2>
+
+								<div id="collapse-faq-2" class="collapse" aria-labelledby="headingTwo"
+									data-parent="#accordion-faq">
+									<div class="accordion-body">
+										I'm planning to continue my study in Management. Wish me all the best!
+									</div>
+								</div>
+							</div>
+							<!-- .accordion-item -->
+
+							<div class="accordion-item">
+								<h2 class="mb-0">
+									<button class="btn btn-link collapsed" type="button" data-bs-toggle="collapse"
+										data-bs-target="#collapse-faq-3">
+										Current Occupation: Expert Computer Specialist
+									</button>
+								</h2>
+
+								<div id="collapse-faq-3" class="collapse" aria-labelledby="headingThree"
+									data-parent="#accordion-faq">
+									<div class="accordion-body">
+										I'm currently working as an expert computer specialist for Statistics of
+										Bengkulu Province. I usually code apps for the business and handle data
+										processing in my unit.
+									</div>
+								</div>
+							</div>
+							<!-- .accordion-item -->
+
+							<div class="accordion-item">
+								<h2 class="mb-0">
+									<button class="btn btn-link collapsed" type="button" data-bs-toggle="collapse"
+										data-bs-target="#collapse-faq-4">
+										I used to teach English
+									</button>
+								</h2>
+
+								<div id="collapse-faq-4" class="collapse" aria-labelledby="headingFour"
+									data-parent="#accordion-faq">
+									<div class="accordion-body">
+										Conducted an unofficial online school that taught English generally for free,
+										for Indonesians aged 15 – 64 years. Subjects included Grammar, Writing, Speaking
+										and Listening. The school had accepted at least 1000 students and
+										generated at least 300 alumni.
+									</div>
+								</div>
+							</div>
+							<!-- .accordion-item -->
+
+							<div class="accordion-item">
+								<h2 class="mb-0">
+									<button class="btn btn-link collapsed" type="button" data-bs-toggle="collapse"
+										data-bs-target="#collapse-faq-5">
+										I used to provide Translation Service
+									</button>
+								</h2>
+
+								<div id="collapse-faq-5" class="collapse" aria-labelledby="headingFive"
+									data-parent="#accordion-faq">
+									<div class="accordion-body">
+										Provided translation service from Indonesian to English vice versa for clients
+										in Indonesia on academic research
+										papers, thesis abstracts and books.
+									</div>
+								</div>
+							</div>
+							<!-- .accordion-item -->
+
+						</div>
 					</div>
 				</div>
-			</li>
-		</ul>
-	</div>
+			</div>
+		</section><!-- /Faq Section -->
+
+		<!-- Recent Posts Section -->
+		<section id="recent-posts" class="recent-posts section">
+
+			<!-- Section Title -->
+			<div class="container section-title" data-aos="fade-up">
+				<h2>ACHIEVEMENTS</h2>
+				<p>LITTLE THINGS TO REMEMBER WHEN I'M FEELING DOWN<br></p>
+			</div><!-- End Section Title -->
+
+			<div class="container">
+
+				<div class="row gy-4">
+
+					<div class="col-xl-6 col-md-6" data-aos="fade-up" data-aos-delay="100">
+						<article>
+
+							<div class="post-img">
+								<img src="index-asset/assets/img/achievement/cert_datathon.jpg" alt=""
+									class="img-fluid">
+							</div>
+
+							<p class="post-category">2024</p>
+
+							<h2 class="title">
+								<a href="https://www.instagram.com/p/C-Mn29nvTW2/?hl=en&img_index=1">1<sup>st</sup>
+									Winner in Data Science Hackathon (Datathon)</a>
+							</h2>
+
+							<div class="d-flex align-items-center">
+								<img src="index-asset/assets/img/achievement/lan.png" alt=""
+									class="img-fluid post-author-img flex-shrink-0">
+								<div class="post-meta">
+									<p class="post-author">Held by: Lembaga Administrasi Negara</p>
+									<p class="post-date">
+										13 June 2024 - 6 August 2024
+									</p>
+								</div>
+							</div>
+
+						</article>
+					</div><!-- End post list item -->
+
+					<div class="col-xl-6 col-md-6" data-aos="fade-up" data-aos-delay="100">
+						<article>
+
+							<div class="post-img">
+								<img src="index-asset/assets/img/achievement/cert_tot.png" alt=""
+									class="img-fluid">
+							</div>
+
+							<p class="post-category">2024</p>
+
+							<h2 class="title">
+								<a href="#">1<sup>st</sup> Winner in Training of Trainer for Computer Specialist</a>
+							</h2>
+
+							<div class="d-flex align-items-center">
+								<img src="index-asset/assets/img/achievement/bps.png" alt=""
+									class="img-fluid post-author-img flex-shrink-0">
+								<div class="post-meta">
+									<p class="post-author">Held by: Pusdiklat (Training Center) of BPS Statistics Indonesia</p>
+									<p class="post-date">
+										12-23 Februari 2024
+									</p>
+								</div>
+							</div>
+
+						</article>
+					</div><!-- End post list item -->
+
+					<div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+						<article>
+
+							<div class="post-img">
+								<img src="index-asset/assets/img/achievement/cert_ai.jpg" alt=""
+									class="img-fluid">
+							</div>
+
+							<p class="post-category">2024</p>
+
+							<h2 class="title">
+								<a href="#">Speaker on Being A Professional Government Employee with AI and IT</a>
+							</h2>
+
+							<div class="d-flex align-items-center">
+								<img src="index-asset/assets/img/achievement/bps.png" alt=""
+									class="img-fluid post-author-img flex-shrink-0">
+								<div class="post-meta">
+									<p class="post-author">Held by: Statistics of Bengkulu Province</p>
+									<p class="post-date">
+										26 April 2024
+									</p>
+								</div>
+							</div>
+
+						</article>
+					</div><!-- End post list item -->
+
+					<div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+						<article>
+
+							<div class="post-img">
+								<img src="index-asset/assets/img/achievement/cert_storytelling.jpg" alt=""
+									class="img-fluid">
+							</div>
+
+							<p class="post-category">2023</p>
+
+							<h2 class="title">
+								<a href="https://www.instagram.com/p/C-Mn29nvTW2/?hl=en&img_index=1">Participated in
+									Data Storytelling Competition</a>
+							</h2>
+
+							<div class="d-flex align-items-center">
+								<img src="index-asset/assets/img/achievement/bps.png" alt=""
+									class="img-fluid post-author-img flex-shrink-0">
+								<div class="post-meta">
+									<p class="post-author">Held by: BPS Statistics Indonesia</p>
+									<p class="post-date">
+										August - September 2023
+									</p>
+								</div>
+							</div>
+
+						</article>
+					</div><!-- End post list item -->
+
+					<div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+						<article>
+
+							<div class="post-img">
+								<img src="index-asset/assets/img/achievement/cert_hackathon.jpg" alt=""
+									class="img-fluid">
+							</div>
+
+							<p class="post-category">2022</p>
+
+							<h2 class="title">
+								<a href="https://www.instagram.com/p/CmXvVIXP2mU/">6<sup>th</sup> Winner in Hackathon
+									Regsosek: Data Festival</a>
+							</h2>
+
+							<div class="d-flex align-items-center">
+								<img src="index-asset/assets/img/achievement/bappenas.png" alt=""
+									class="img-fluid post-author-img flex-shrink-0">
+								<div class="post-meta">
+									<p class="post-author">Held by: Kementerian PPN/Bappenas</p>
+									<p class="post-date">
+										20-21 December 2022
+									</p>
+								</div>
+							</div>
+
+						</article>
+					</div><!-- End post list item -->
+
+					<div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+						<article>
+
+							<div class="post-img">
+								<img src="index-asset/assets/img/achievement/cert_statfair.png" alt=""
+									class="img-fluid">
+							</div>
+
+							<p class="post-category">2022</p>
+
+							<h2 class="title">
+								<a href="https://www.instagram.com/himasta.unib/">Speaker at National Statistical
+									Seminar</a>
+							</h2>
+
+							<div class="d-flex align-items-center">
+								<img src="index-asset/assets/img/achievement/unib.png" alt=""
+									class="img-fluid post-author-img flex-shrink-0">
+								<div class="post-meta">
+									<p class="post-author">Held by: University of Bengkulu</p>
+									<p class="post-date">
+										25 September 2022
+									</p>
+								</div>
+							</div>
+
+						</article>
+					</div><!-- End post list item -->
+
+					<div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+						<article>
+
+							<div class="post-img">
+								<img src="index-asset/assets/img/achievement/cert_hackathon.jpg" alt=""
+									class="img-fluid">
+							</div>
+
+							<p class="post-category">2021</p>
+
+							<h2 class="title">
+								<a href="https://www.instagram.com/p/CTTLDMehjvT/">Participated in Big Data
+									Hackathon</a>
+							</h2>
+
+							<div class="d-flex align-items-center">
+								<img src="index-asset/assets/img/achievement/bps.png" alt=""
+									class="img-fluid post-author-img flex-shrink-0">
+								<div class="post-meta">
+									<p class="post-author">Held by: BPS Statistics Indonesia</p>
+									<p class="post-date">
+										27 August 2021 - 11 October 2021
+									</p>
+								</div>
+							</div>
+
+						</article>
+					</div><!-- End post list item -->
+
+
+					<div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+						<article>
+
+							<div class="post-img">
+								<img src="index-asset/assets/img/achievement/cert_infographics.jpg" alt=""
+									class="img-fluid">
+							</div>
+
+							<p class="post-category">2016</p>
+
+							<h2 class="title">
+								<a href="https://www.instagram.com/p/CTTLDMehjvT/">3<sup>rd</sup> Winner in Interactive
+									Infographics Competition</a>
+							</h2>
+
+							<div class="d-flex align-items-center">
+								<img src="index-asset/assets/img/achievement/bps.png" alt=""
+									class="img-fluid post-author-img flex-shrink-0">
+								<div class="post-meta">
+									<p class="post-author">Held by: BPS Statistics Indonesia</p>
+									<p class="post-date">
+										29 November - 15 December 2016
+									</p>
+								</div>
+							</div>
+
+						</article>
+					</div><!-- End post list item -->
+				</div><!-- End recent posts list -->
+
+			</div>
+
+		</section><!-- /Recent Posts Section -->
+
+	</main>
+
+	<footer id="footer" class="footer dark-background">
+		<div class="container">
+			<h3 class="sitename">Safira Khansa's Unlocked</h3>
+			<p>Thank you for stopping by. Contact me for more info.</p>
+			<div class="social-links d-flex justify-content-center">
+				<a href="https://x.com/safirakhansa19"><i class="bi bi-twitter-x"></i></a>
+				<a href="https://www.facebook.com/fi.nofriani"><i class="bi bi-facebook"></i></a>
+				<a href="https://www.instagram.com/khansa.safira19/"><i class="bi bi-instagram"></i></a>
+				<a href="https://www.youtube.com/@khansa.safira19"><i class="bi bi-youtube"></i></a>
+			</div>
+			<div class="container">
+				<div class="copyright">
+					<span>Copyright</span> <strong class="px-1 sitename">Nofriani</strong> <span>All Rights
+						Reserved</span>
+				</div>
+				<div class="credits">
+					<!-- All the links in the footer should remain intact. -->
+					<!-- You can delete the links only if you've purchased the pro version. -->
+					<!-- Licensing information: https://bootstrapmade.com/license/ -->
+					<!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+					Template retrieved from <a href="https://bootstrapmade.com/">BootstrapMade</a>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<!-- Scroll Top -->
+	<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+			class="bi bi-arrow-up-short"></i></a>
+
+	<!-- Preloader -->
+	<div id="preloader"></div>
+
+	<!-- Vendor JS Files -->
+	<script src="index-asset/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="index-asset/assets/vendor/php-email-form/validate.js"></script>
+	<script src="index-asset/assets/vendor/aos/aos.js"></script>
+	<script src="index-asset/assets/vendor/glightbox/js/glightbox.min.js"></script>
+	<script src="index-asset/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+	<script src="index-asset/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+	<script src="index-asset/assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+	<!-- Main JS File -->
+	<script src="index-asset/assets/js/main.js"></script>
 
 </body>
 
