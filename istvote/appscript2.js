@@ -2,21 +2,21 @@ function doPost(e) {
   var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("votes");
   var data = JSON.parse(e.postData.contents);
   var nip = data.nip;
-  var candidate = data.candidate;
+  var candidates = data.candidates; // This is now an array of 3 candidates
 
-  // Check for duplicate votes (same NIP and same candidate)
-  var votesData = sheet.getRange(2, 1, sheet.getLastRow()-1, 3).getValues();
-  var hasAlreadyVoted = votesData.some(row => row[2] === nip && row[1] === candidate);
-  
-  if (hasAlreadyVoted) {
+  // Check if NIP has already voted
+  var nips = sheet.getRange(2, 3, sheet.getLastRow() - 1, 1).getValues().flat();
+  if (nips.indexOf(nip) !== -1) {
     return ContentService.createTextOutput(JSON.stringify({
       status: "error",
-      message: "Anda sudah memilih kandidat ini!"
+      message: "Anda sudah melakukan voting!"
     })).setMimeType(ContentService.MimeType.JSON);
   }
 
-  // Save the vote: [timestamp, candidate, nip]
-  sheet.appendRow([new Date(), candidate, nip]);
+  // Save each candidate as a separate row
+  candidates.forEach(candidate => {
+    sheet.appendRow([new Date(), candidate, nip]);
+  });
 
   return ContentService.createTextOutput(JSON.stringify({
     status: "success",
@@ -30,11 +30,12 @@ function doGet(e) {
   var counts = {};
 
   for (var i = 1; i < data.length; i++) {
-    var candidate = data[i][1]; // candidate column
+    var candidate = data[i][1]; // column candidate
     if (!counts[candidate]) counts[candidate] = 0;
     counts[candidate]++;
   }
 
-  return ContentService.createTextOutput(JSON.stringify(counts))
-    .setMimeType(ContentService.MimeType.JSON);
+  return ContentService
+    .createTextOutput(JSON.stringify(counts))
+    .setMimeType(ContentService.MimeType.JSON);  // ✅ No .setHeader()
 }
