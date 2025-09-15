@@ -30,7 +30,7 @@ function doGet(e) {
   var counts = {};
 
   for (var i = 1; i < data.length; i++) {
-    var candidate = data[i][1]; // kolom kandidat
+    var candidate = data[i][1]; // candidate column
     if (!counts[candidate]) counts[candidate] = 0;
     counts[candidate]++;
   }
