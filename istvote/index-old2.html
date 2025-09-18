@@ -187,8 +187,7 @@
     </div>
 
     <div class="footer">
-        <p>© 2025 Sistem Voting IST Favorit | Batas waktu voting: 25 September 2025, 10:55 WIB | Coded by <a
-                href="https://www.youtube.com/@khansa.safira19/">YukFi</a></p>
+        <p>© 2025 Sistem Voting IST Favorit | Batas waktu voting: 25 September 2025, 10:55 WIB | Coded by <a href="https://www.youtube.com/@khansa.safira19/">YukFi</a></p>
     </div>
 
     <script>
@@ -203,7 +202,7 @@
             { name: "Firman", photo: "foto_ist/1705.png" },
             { name: "Diah", photo: "foto_ist/1706.png" },
             { name: "Azni", photo: "foto_ist/1707.png" },
-            { name: "Jhon", photo: "foto_ist/1708.jpg" },
+            { name: "Jhon", photo: "foto_ist/1708.png" },
             { name: "Mey", photo: "foto_ist/1709.jpg" },
             { name: "Ibram", photo: "foto_ist/1771.png" }
         ];
@@ -245,14 +244,10 @@
                     }
                 }
 
-                // 🔹 update the counter display
-                document.getElementById("selectedCount").textContent = selectedCandidates.length;
-
                 // Enable submit button if exactly 3 candidates are selected
                 submitButton.disabled = selectedCandidates.length !== 3;
             });
         });
-
 
         // Add event listener to submit button
         submitButton.addEventListener('click', submitVote);
@@ -344,12 +339,12 @@
         async function loadResults() {
             try {
                 let res = await fetch(API_URL);
-
+                
                 // Check if the response is valid
                 if (!res.ok) {
                     throw new Error(`HTTP error! status: ${res.status}`);
                 }
-
+                
                 let data = await res.json();
                 let labels = candidates.map(c => c.name);
                 let values = labels.map(c => data[c] || 0);
@@ -358,7 +353,7 @@
                 if (!chart) {
                     // Remove placeholder
                     document.getElementById('resultsChart').innerHTML = '';
-
+                    
                     chart = Highcharts.chart('resultsChart', {
                         chart: {
                             type: 'column',
@@ -416,7 +411,7 @@
 
         // Try to load results initially
         loadResults();
-
+        
         // Don't auto-refresh if there's an error to avoid constant error messages
         let refreshInterval = setInterval(() => {
             if (document.getElementById('resultsChart').querySelector('.highcharts-container')) {
