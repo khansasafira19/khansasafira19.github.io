@@ -96,6 +96,7 @@
             height: 240px;
             width: 100%;
             object-fit: cover;
+            object-position:top;
         }
 
         .card-body {
@@ -216,12 +217,12 @@
 
         // List of candidates with photo URLs
         const candidates = [
-            { name: "Calon 1", photo: "foto_cc/1.png" },
-            { name: "Calon 2", photo: "foto_cc/2.png" },
-            { name: "Calon 3", photo: "foto_cc/3.png" },
-            { name: "Calon 4", photo: "foto_cc/4.png" },
-            { name: "Calon 5", photo: "foto_cc/5.png" },
-            { name: "Calon 6", photo: "foto_cc/6.png" },
+            { name: "Aswien Oktavian Perdana, SST, M.E.", photo: "foto_cc/1.png" },
+            { name: "Auliya Yudha Pratama, SST, M.Stat., ", photo: "foto_cc/2.png" },
+            { name: "Herlinawaty, S.Si., M.Si.", photo: "foto_cc/3.png" },
+            { name: "Novrian Pratama, SST, M.Si.", photo: "foto_cc/4.png" },
+            { name: "Tommy Jomecho, SST, M.E.", photo: "foto_cc/5.png" },
+            { name: "Suhanderi, S.H., M.H.", photo: "foto_cc/6.png" },
         ];
 
         let selectedCandidates = [];
@@ -231,7 +232,7 @@
         const container = document.getElementById("candidates");
         candidates.forEach(c => {
             const div = document.createElement("div");
-            div.className = "col-md-4 col-lg-4 mb-4";
+            div.className = "col-md-2 col-lg-2 mb-4";
             div.innerHTML = `
                 <div class="card candidate-card" data-name="${c.name}">
                 <img src="${c.photo}" alt="${c.name}">
