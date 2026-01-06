@@ -9,138 +9,158 @@
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <link rel="shortcut icon" href="../infografisfi/images/logobps.png" type="image/x-icon">
     <style>
+        :root {
+            --accent: #0d9488;
+            /* teal */
+            --accent-soft: #99f6e4;
+            --dark: #1f2937;
+            /* slate */
+            --muted: #6b7280;
+            --bg: #f1f5f9;
+            --card-bg: rgba(255, 255, 255, 0.85);
+            --border-soft: rgba(0, 0, 0, 0.06);
+        }
+
         body {
-            font-family: "Poppins", Helvetica, "sans-serif";
-            background: #f9f9f9;
-            padding-bottom: 50px;
+            font-family: "Poppins", system-ui, sans-serif;
+            background: linear-gradient(180deg, #f8fafc, #eef2f7);
+            padding-bottom: 60px;
+            color: var(--dark);
         }
 
+        /* ===== HEADER ===== */
         .header {
-            background: linear-gradient(135deg, #007BFF 0%, #0056b3 100%);
+            background: linear-gradient(135deg, #111827, #1f2937);
             color: white;
-            padding: 20px 0;
-            margin-bottom: 30px;
-            border-radius: 0 0 20px 20px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 28px 0;
+            margin-bottom: 40px;
+            border-radius: 0 0 28px 28px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
         }
 
+        .header h1 {
+            font-weight: 700;
+            letter-spacing: 0.3px;
+        }
+
+        .header p {
+            opacity: 0.85;
+        }
+
+        /* ===== INSTRUCTIONS ===== */
+        .instructions {
+            background: white;
+            border-left: 6px solid var(--accent);
+            padding: 18px 20px;
+            border-radius: 14px;
+            margin-bottom: 25px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+        }
+
+        /* ===== COUNTER ===== */
+        .selection-counter {
+            text-align: center;
+            margin: 18px 0 28px;
+            font-size: 1.05rem;
+            color: var(--muted);
+        }
+
+        .selection-counter span {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        /* ===== CANDIDATE CARD ===== */
         .candidate-card {
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-            transition: all 0.3s ease;
+            background: var(--card-bg);
+            backdrop-filter: blur(8px);
+            border-radius: 18px;
+            border: 1px solid var(--border-soft);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
             cursor: pointer;
             overflow: hidden;
         }
 
-        .col-md-5 {
-            flex: 0 0 auto;
-            width: 20%;
-        }
-
         .candidate-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+            transform: translateY(-6px);
+            box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
         }
 
         .candidate-card.selected {
-            border: 3px solid #007BFF;
-            transform: translateY(-5px);
-        }
-
-        .candidate-card.selected-number {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: #007BFF;
-            color: white;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
+            outline: 3px solid var(--accent);
+            outline-offset: -3px;
         }
 
         .candidate-card img {
-            border-top-left-radius: 15px;
-            border-top-right-radius: 15px;
-            height: 250px;
-            object-fit: cover;
+            height: 240px;
             width: 100%;
+            object-fit: cover;
         }
 
-        .vote-btn {
-            background: #007BFF;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            padding: 8px 16px;
-            cursor: pointer;
+        .card-body {
+            text-align: center;
+            padding: 14px 10px 18px;
+            position: relative;
         }
 
-        .vote-btn:hover {
-            background: #0056b3;
+        .card-title {
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 0;
         }
 
-        .vote-btn:disabled {
-            background: #6c757d;
-            cursor: not-allowed;
-        }
-
+        /* ===== SUBMIT BUTTON ===== */
         #submitVote {
             display: block;
-            margin: 30px auto;
-            padding: 12px 40px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            margin: 35px auto 10px;
+            padding: 14px 44px;
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: white;
+            background: linear-gradient(135deg, #0d9488, #14b8a6);
             border: none;
-            border-radius: 50px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 999px;
+            box-shadow: 0 10px 25px rgba(13, 148, 136, 0.35);
             transition: all 0.3s ease;
         }
 
         #submitVote:hover:not(:disabled) {
             transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 14px 32px rgba(13, 148, 136, 0.45);
         }
 
-        .selection-counter {
-            text-align: center;
-            margin: 15px 0;
-            font-size: 1.1rem;
-            color: #6c757d;
+        #submitVote:disabled {
+            background: #94a3b8;
+            box-shadow: none;
+            cursor: not-allowed;
         }
 
-        .instructions {
-            background: #e9ecef;
-            padding: 15px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-        }
-
-        .card-body {
-            position: relative;
-        }
-
-        .footer {
-            text-align: center;
-            margin-top: 40px;
-            padding: 20px;
-            color: #6c757d;
-            font-size: 0.9rem;
-        }
-
+        /* ===== CHART ===== */
         .chart-placeholder {
-            height: 500px;
+            height: 460px;
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: #f8f9fa;
-            border-radius: 10px;
-            border: 2px dashed #dee2e6;
+            background: white;
+            border-radius: 18px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            margin-top: 20px;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 22px;
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+
+        .footer a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
         }
     </style>
 </head>
@@ -148,8 +168,8 @@
 <body>
     <div class="header">
         <div class="container">
-            <h1 class="text-center mb-2">Pemilihan Change Champion</h1>
-            <p class="text-center mb-0">Pilih 3 Kandidat CC Pilihanmu!</p>
+            <h1 class="text-center mb-1">Pemilihan Change Champion</h1>
+            <p class="text-center mb-0">Tentukan 3 kandidat terbaik pilihan Anda</p>
         </div>
     </div>
 
@@ -174,7 +194,7 @@
         <button id="submitVote" class="btn btn-primary" disabled>Submit Vote</button>
 
         <div id="results" class="mt-5">
-            <h2 class="text-center">Real-time Hasil Voting</h2>
+            <h2 class="text-center fw-semibold mb-4">Live Top 3 Voting Result</h2>
             <div id="resultsChart" class="chart-placeholder">
                 <div class="text-center text-muted">
                     <p>Loading chart data...</p>
@@ -211,7 +231,7 @@
         const container = document.getElementById("candidates");
         candidates.forEach(c => {
             const div = document.createElement("div");
-            div.className = "col-md-2 col-lg-2 mb-4";
+            div.className = "col-md-4 col-lg-4 mb-4";
             div.innerHTML = `
                 <div class="card candidate-card" data-name="${c.name}">
                 <img src="${c.photo}" alt="${c.name}">
