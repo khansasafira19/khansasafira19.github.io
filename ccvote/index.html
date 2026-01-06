@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Voting CC</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <link rel="shortcut icon" href="../infografisfi/images/logobps.png" type="image/x-icon">
+    <style>
+        body {
+            font-family: "Poppins", Helvetica, "sans-serif";
+            background: #f9f9f9;
+            padding-bottom: 50px;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #007BFF 0%, #0056b3 100%);
+            color: white;
+            padding: 20px 0;
+            margin-bottom: 30px;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .candidate-card {
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        .col-md-5 {
+            flex: 0 0 auto;
+            width: 20%;
+        }
+
+        .candidate-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .candidate-card.selected {
+            border: 3px solid #007BFF;
+            transform: translateY(-5px);
+        }
+
+        .candidate-card.selected-number {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #007BFF;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .candidate-card img {
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            height: 250px;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .vote-btn {
+            background: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 8px 16px;
+            cursor: pointer;
+        }
+
+        .vote-btn:hover {
+            background: #0056b3;
+        }
+
+        .vote-btn:disabled {
+            background: #6c757d;
+            cursor: not-allowed;
+        }
+
+        #submitVote {
+            display: block;
+            margin: 30px auto;
+            padding: 12px 40px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            border: none;
+            border-radius: 50px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        #submitVote:hover:not(:disabled) {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .selection-counter {
+            text-align: center;
+            margin: 15px 0;
+            font-size: 1.1rem;
+            color: #6c757d;
+        }
+
+        .instructions {
+            background: #e9ecef;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .card-body {
+            position: relative;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+
+        .chart-placeholder {
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            border: 2px dashed #dee2e6;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <h1 class="text-center mb-2">Pemilihan Change Champion</h1>
+            <p class="text-center mb-0">Pilih 3 Kandidat CC Pilihanmu!</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="instructions">
+            <h4>Petunjuk Pemilihan:</h4>
+            <ol class="mb-0">
+                <li>Klik pada 3 gambar yang ingin Anda pilih</li>
+                <li>Gambar yang terpilih akan diberi border biru dan nomor urut</li>
+                <li>Tombol "Submit Vote" akan aktif setelah memilih 3 gambar</li>
+                <li>Setelah klik submit, masukkan NIP Anda (18 digit)</li>
+                <li>Vote akan tersimpan setelah konfirmasi</li>
+            </ol>
+        </div>
+
+        <div class="selection-counter">
+            <span id="selectedCount">0</span> dari 3 terpilih
+        </div>
+
+        <div id="candidates" class="row"></div>
+
+        <button id="submitVote" class="btn btn-primary" disabled>Submit Vote</button>
+
+        <div id="results" class="mt-5">
+            <h2 class="text-center">Real-time Hasil Voting</h2>
+            <div id="resultsChart" class="chart-placeholder">
+                <div class="text-center text-muted">
+                    <p>Loading chart data...</p>
+                    <div class="spinner-border" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2026 Sistem Voting CC | Batas waktu voting: 9 Januari 2026, 16:00 WIB | Coded by <a
+                href="https://www.youtube.com/@khansa.safira19/">YukFi</a></p>
+    </div>
+
+    <script>
+        const API_URL = "https://script.google.com/macros/s/AKfycbwfWeRLQwyBQa0IoWJ57OKkiveNZS1wnCm6K1ydoVxR5hqBBF3ZKo6Vp4u9wpz9rwes/exec"; // Replace with your Google Apps Script Web App URL
+
+        // List of candidates with photo URLs
+        const candidates = [
+            { name: "Calon 1", photo: "foto_cc/1.png" },
+            { name: "Calon 2", photo: "foto_cc/2.png" },
+            { name: "Calon 3", photo: "foto_cc/3.png" },
+            { name: "Calon 4", photo: "foto_cc/4.png" },
+            { name: "Calon 5", photo: "foto_cc/5.png" },
+            { name: "Calon 6", photo: "foto_cc/6.png" },
+        ];
+
+        let selectedCandidates = [];
+        const submitButton = document.getElementById("submitVote");
+
+        // Render candidate cards
+        const container = document.getElementById("candidates");
+        candidates.forEach(c => {
+            const div = document.createElement("div");
+            div.className = "col-md-2 col-lg-2 mb-4";
+            div.innerHTML = `
+                <div class="card candidate-card" data-name="${c.name}">
+                <img src="${c.photo}" alt="${c.name}">
+                <div class="card-body text-center">
+                    <h5 class="card-title">${c.name}</h5>
+                </div>
+                </div>`;
+            container.appendChild(div);
+        });
+
+        // Add click event listeners to candidate cards
+        document.querySelectorAll('.candidate-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const candidateName = card.getAttribute('data-name');
+
+                if (card.classList.contains('selected')) {
+                    // Deselect if already selected
+                    card.classList.remove('selected');
+                    selectedCandidates = selectedCandidates.filter(name => name !== candidateName);
+                } else {
+                    // Select if not already selected and less than 3 selected
+                    if (selectedCandidates.length < 3) {
+                        card.classList.add('selected');
+                        selectedCandidates.push(candidateName);
+                    } else {
+                        Swal.fire('Peringatan', 'Anda hanya dapat memilih maksimal 3 kandidat', 'warning');
+                    }
+                }
+
+                // 🔹 update the counter display
+                document.getElementById("selectedCount").textContent = selectedCandidates.length;
+
+                // Enable submit button if exactly 3 candidates are selected
+                submitButton.disabled = selectedCandidates.length !== 3;
+            });
+        });
+
+
+        // Add event listener to submit button
+        submitButton.addEventListener('click', submitVote);
+
+        // cutoff date (Jakarta time = GMT+7)
+        const cutoff = new Date("2026-01-09T16:00:00+07:00");
+
+        // function to check and disable vote buttons
+        function checkVotingDeadline() {
+            const now = new Date();
+            if (now >= cutoff) {
+                document.querySelectorAll(".candidate-card").forEach(card => {
+                    card.style.pointerEvents = "none";
+                    card.style.opacity = "0.6";
+                });
+                submitButton.disabled = true;
+                submitButton.innerText = "Voting Closed";
+            }
+        }
+
+        // run once when page loads
+        checkVotingDeadline();
+
+        // optional: keep checking every minute
+        setInterval(checkVotingDeadline, 60000);
+
+        const whitelist = ["196608251988021001", "197610111997121001", "197907102002121007", "198108252003122001", "197802231999122001", "197708112000122001", "198311072006021003", "198704122009122007", "198610092009021003", "199308152014121001", "199111192014102002", "198902052012121001", "198701022012111001", "198203262011011011", "198701292011012008", "198805102010122008", "198812302010122005", "198804092010122003", "198707242010121004", "198307042010031002", "198706162009121001", "198603082008012001", "197905282005022002", "197106231994012001", "197112041992032002", "197101151992012001", "196812121989032002", "199402022017011001", "199203162016021001", "198808252012112001", "199311132016021001", "199110242014102001", "199305232014122001", "199505112018021001", "199611212019012001", "199402042019032003", "199805192021041001", "199410092017012001", "199409052017012001", "199401292016022001", "199905292023022001", "197103051991011001", "197109291993021001", "198710172009121004", "198107272004122001", "198701012011011016", "198007102011012011", "197901212011011006", "198705182009021001", "198508102005021003", "198007142002122004", "198811062012122003", "198907112011011004", "198504012011012012", "197403272009011008", "198808032023211005", "199808022019122001", "199703222022012001", "199308262022031005", "197707302006041008", "199210202024212015", "200005072022011003", "196906161994032003", "199308192025062003", "200011022025061003", "198306162006021003", "198701272009121002", "198610182010031001", "198603122011012018", "198209072011011009", "197109061994011001", "198211282011012012", "197905082011011011", "197801112006041020", "198104232011011012", "198507202011012013", "199603302019012002", "199604262019011001", "198401162009112001", "199802032021041002", "199903302022011002", "199911042022012003", "199601102022032018", "199505192022032007", "200109292023022004", "200010312023101004", "200204252024122001", "200105252024122002", "198512252009111001", "198311102006041013", "198203292004121001", "198509252008011002", "196709051989031003", "197210181993021001", "198301142003121003", "198503022005021001", "198311042008012008", "198401152011012011", "198504122011012017", "198808132012112001", "198512122011011010", "198405282011011005", "198710162012121001", "199605062019012002", "199502222019032001", "199708142019122001", "199901172022012002", "200009042023101001", "200104302023102002", "199712162022032018", "199610042022032009", "200209152024122001", "198607032005021001", "198511022009012003", "198601182005022001", "196809051994011001", "198103202003121006", "198208062004122001", "198709012009121002", "198603272010122003", "198805132010121008", "197309192003122003", "197306132001121001", "197903022002121001", "198408122011012017", "199401012018021001", "197704152007011006", "199507252018021001", "199406242018022001", "199509032019031001", "199405242019032001", "199710042019122001", "199711222019121001", "199710092021042001", "199511112022032016", "199903152023022002", "200102252023101005", "198811012022031005", "198011172005021001", "200109022024122003", "198301212006041014", "198702032010012011", "199401242024211006", "197108211993071001", "197211252003121003", "198208192011012008", "199109022014102001", "198306142011011012", "198504252011011011", "198302012011012014", "199411172018021001", "199701282019121001", "199610062019121001", "200007062021042001", "200001042022011002", "199905102022012002", "199407162022032016", "199708142022032015", "200009152023022003", "200101272023022001", "200011162023101002", "200107152023102002", "198803012022032003", "200205262024122003", "198705192006041001", "198804192010032001", "197402011998031003", "198508052009021001", "197409121994011001", "197804052002121008", "198602142009121001", "198605222010032001", "198504012011011014", "198501112011012015", "198412062011011011", "199402212017012001", "198604292006042001", "198101092007011001", "198512272011011007", "199007062019031001", "199806202021042001", "199811092022012001", "199607082022032015", "200209092023102001", "199802012022031006", "200012292023022002", "197909142002121005", "200205252024122006", "197211131994012001", "198306162010031001", "198002202003121004", "198408192009021006", "198103042003121003", "198506292010031001", "198304112011012010", "198202162011011010", "198104262011011008", "199708262019121001", "199706062019122001", "199602262019121001", "199801192021041001", "199610162019121001", "200003132022011004", "199805122022032015", "200111012023021004", "199908072023021001", "200112252023101001", "199205062024211007", "200103292024122001", "200207032024122002", "200110222024121003", "198109252010032001", "198609072011011008", "197601281997121001", "197402281993021002", "198601182009022007", "197606022011011003", "199008062013111001", "199411082018021001", "199606052019012001", "199601312019031001", "199907152021042002", "200004302022012003", "199710212022012001", "200004072023022002", "199909212023022002", "200110282023102004", "199612072022032016", "199110282022031011", "200112082024122002", "200206192024121003", "198507252005021001", "198809082012122002", "198207272011011009", "199810142019122001", "199512202025062004", "197306071995121001", "196801112002121002", "198706062009121002", "198508302010031003", "198406242011011011", "199011122014101001", "198601052011012022", "197808192011011004", "199702102019032002", "199704112019122003", "199802012021041001", "199712212021042001", "199908142022012002", "199812152022012002", "199901162023022001", "200010072023022002", "200105042023102002", "199408242024211004", "200309052024122002", "200112232024122003", "196810211989031001", "198503062011012015", "198811032012122002", "199807232019121003", "199807172019121002", "198112272010031001", "198606242009022008", "197111171994032002", "197308131994031001", "197604132002122001", "198311132006022002", "197910042006042002", "198603072009022005", "198605102011012031", "198605042011012028", "198402142011012011", "197804242011011007", "198805122012122001", "199201242014122001", "198105252011011009", "199409282016022001", "198406042009011008", "198708042010031001", "199807302022011001", "200104102023102002", "198111282024211001", "200009072023021002", "200205112024122003", "197512082005021001", "199103302014121001", "198311112006041001", "198711132006041001", "197803202000122001", "197609281997122001", "196902181994011001", "198405032007012010", "196811212003121002", "198209292005022002", "197911032006041004", "198601112006041007", "198306142010032001", "198607142011012017", "199110192014121001", "199102262014101001", "199302082014122002", "199207212014122002", "199505312019032001", "199912252023022001", "200211112023102001", "199907102023022001", "197403242002122006", "200109182024122002", "198204292010031001", "197103271994032002", "198705092011011010", "199004122013112001", "198509122011011013"];
+
+        async function submitVote() {
+            if (selectedCandidates.length !== 3) {
+                Swal.fire('Peringatan', 'Silakan pilih 3 kandidat', 'warning');
+                return;
+            }
+
+            const { value: nip } = await Swal.fire({
+                title: 'Masukkan NIP Anda\n(18 Digits)',
+                input: 'text',
+                inputPlaceholder: '1991xxxxxxxxxxxxxx',
+                inputValidator: (value) => {
+                    if (!value) return 'Mohon isikan NIP';
+                    if (!/^\d+$/.test(value)) return 'NIP hanya boleh angka';
+                    if (value.length < 18) return 'NIP harus 18 digit';
+                },
+                showCancelButton: true,
+                confirmButtonText: 'Submit Vote'
+            });
+
+            if (!nip) return;
+
+            const cleanNip = nip.trim();   // remove spaces before/after
+            if (!whitelist.includes(cleanNip)) {
+                Swal.fire('Oops!', 'Voting hanya diperuntukkan untuk pegawai BPS se-Provinsi Bengkulu.', 'error');
+                return;
+            }
+
+            // 🔹 Show loading alert while sending data
+            Swal.fire({
+                title: 'Submitting your vote...',
+                allowOutsideClick: false,
+                didOpen: () => {
+                    Swal.showLoading();
+                }
+            });
+
+            let res = await fetch(API_URL, {
+                method: "POST",
+                body: JSON.stringify({
+                    nip: nip,
+                    candidates: selectedCandidates
+                })
+            });
+            let json = await res.json();
+
+            if (json.status === "success") {
+                Swal.fire('Thank you!', json.message, 'success');
+                // Reset selection
+                selectedCandidates = [];
+                document.querySelectorAll('.candidate-card').forEach(card => {
+                    card.classList.remove('selected');
+                });
+                submitButton.disabled = true;
+            } else {
+                Swal.fire('Oops!', json.message, 'error');
+            }
+
+            loadResults();
+        }
+
+        // Highcharts setup
+        let chart;
+        async function loadResults() {
+            try {
+                let res = await fetch(API_URL);
+
+                // Check if the response is valid
+                if (!res.ok) {
+                    throw new Error(`HTTP error! status: ${res.status}`);
+                }
+
+                let data = await res.json();
+                // 🔹 Convert results into sortable array
+                let resultArray = candidates.map(c => ({
+                    name: c.name,
+                    votes: data[c.name] || 0
+                }));
+
+                // 🔹 Sort descending by votes
+                resultArray.sort((a, b) => b.votes - a.votes);
+
+                // 🔹 Take top 3 only
+                let top3 = resultArray.slice(0, 3);
+
+                // 🔹 Extract labels & values
+                const medals = ["🥇", "🥈", "🥉"];
+
+                let labels = top3.map((item, index) =>
+                    `${medals[index]} ${item.name}`
+                );
+
+                let values = top3.map(item => item.votes);
+
+
+                // Create or update the chart
+                if (!chart) {
+                    // Remove placeholder
+                    document.getElementById('resultsChart').innerHTML = '';
+
+                    chart = Highcharts.chart('resultsChart', {
+                        chart: {
+                            type: 'column',
+                            style: {
+                                fontFamily: 'Poppins, sans-serif'
+                            }
+                        },
+                        title: {
+                            text: 'Live Vote Count',
+                            style: { fontFamily: 'Poppins, sans-serif' }
+                        },
+                        xAxis: {
+                            categories: labels,
+                            labels: {
+                                style: { fontFamily: 'Poppins, sans-serif' }
+                            }
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: 'Votes',
+                                style: { fontFamily: 'Poppins, sans-serif' }
+                            },
+                            labels: {
+                                style: { fontFamily: 'Poppins, sans-serif' }
+                            }
+                        },
+                        legend: {
+                            itemStyle: { fontFamily: 'Poppins, sans-serif' }
+                        },
+                        tooltip: {
+                            style: { fontFamily: 'Poppins, sans-serif' }
+                        },
+                        series: [{
+                            name: 'Votes',
+                            data: values,
+                            colorByPoint: true
+                        }]
+                    });
+                } else {
+                    chart.series[0].setData(values);
+                }
+            } catch (error) {
+                console.error("Error loading results:", error);
+                // Show error message in the chart container
+                document.getElementById('resultsChart').innerHTML = `
+                    <div class="text-center text-danger">
+                        <p>Gagal memuat data hasil voting.</p>
+                        <p>Pastikan deployment Google Apps Script sudah dikonfigurasi dengan benar.</p>
+                        <small>Error: ${error.message}</small>
+                    </div>
+                `;
+            }
+        }
+
+        // Try to load results initially
+        loadResults();
+
+        // Don't auto-refresh if there's an error to avoid constant error messages
+        let refreshInterval = setInterval(() => {
+            if (document.getElementById('resultsChart').querySelector('.highcharts-container')) {
+                loadResults();
+            } else {
+                clearInterval(refreshInterval);
+            }
+        }, 10000);
+    </script>
+
+</body>
+
+</html>
